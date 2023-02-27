@@ -33,11 +33,6 @@ public class RestController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    @GetMapping("/authUser")
-    public ResponseEntity<User> getAuthUser() {
-        User authUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return ResponseEntity.ok(authUser);
-    }
 
     @PostMapping("/users")
     public ResponseEntity<HttpStatus> createUser(@RequestBody User user) {
